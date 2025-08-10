@@ -16,6 +16,16 @@ const output=users.filter((user)=>user.age<30).reduce((acc,curr)=>{
     
 const output1=users.filter((user)=>user.age<30).map((user)=>user.name)
 
+const output2=users.reduce((acc,curr)=>{
+    if(curr.age<30){
+       acc.push(curr.name)
+    }
+    return acc;
+
+},[])
+
 console.log(output);
 console.log(output1)
+console.log(output2)
 
+//all give same result
