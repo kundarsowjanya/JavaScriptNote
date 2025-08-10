@@ -19,5 +19,3 @@ const output1=users.filter((user)=>user.age<30).map((user)=>user.name)
 console.log(output);
 console.log(output1)
 
-//both are same
-
