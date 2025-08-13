@@ -1,52 +1,28 @@
-let name={
-    firstname:"Sowjanya",
-    lastname:"G"
+//Curring can be done in 2 ways:
+//1. Using bind
+//2. Using closure
+
+
+
+
+let multiply=function(x,y){
+    console.log(x*y);
 }
 
-function printFullName(hometown,state){
-   console.log(this.firstname + " " + this.lastname + " from " + hometown + ", " + state);
-}
+//Using bind to create a curried function
 
-//This is traditiinal way of binding 
-let printName=printFullName.bind(name,"Udupi")
-printName("Karnataka"); // Outputs: Sowjanya G from Udupi, Karnataka
+let mutiPlyBYTwo= multiply.bind(this,2);;   // x is 2
+mutiPlyBYTwo(5); // Outputs: 10   //y is 5
 
 
-//Creating own bind function
+//uing closure to create a curried function
 
-Function.prototype.myBind=function(...args){
-    let obj = this; // 'this' refers to the function being bound
-    return function(){
-        obj.call(args[0])
+let cuuriedMultiply=function(x){
+    return function(y){
+        console.log(x*y);
     }
 }
 
-let printName2=printFullName.myBind(name);
-printName2();
+let multiplyByThree = cuuriedMultiply(3);
+multiplyByThree(4); // Outputs: 12   //y is 4
 
-
-//using argument in myBind
-
-Function.prototype.myBind1=function(...args){
-    let obj = this; // 'this' refers to the function being bound
-    params=args.slice(1); // Extracting additional parameters
-    return function(){
-        obj.apply(args[0],params);
-    }
-}
-
-let printName3=printFullName.myBind1(name,"Udupi");
-printName3(); // Outputs: Sowjanya G from Udupi
-
-//pass argument in invoked function
-
-Function.prototype.myBind2=function(...args){
-    let obj=this; // 'this' refers to the function being bound
-    params=args.slice(1); // Extracting additional parameters
-    return function(...args2){
-         obj.apply(args[0],[...params,...args2]);
-    }
-}
-
-let printName4=printFullName.myBind2(name,"Udupi");
-printName4("Karnataka"); // Outputs: Sowjanya G from Udupi, Karnataka
