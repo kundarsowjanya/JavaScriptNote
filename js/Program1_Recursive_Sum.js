@@ -20,3 +20,7 @@ console.log(sum2(10)(2)(4)(5)(6)(7)(8)(9)(10)()); // 61
 let sum3= a=>b=> {return b? sum3(a+b):a};
 
 console.log(sum3(10)(2)(4)(5)(6)(7)(8)(9)(10)()); // 61
+
+let sum4= a=>b=> b? sum3(a+b):a;
+
+console.log(sum4(10)(2)(4)(5)(6)(7)(8)(9)(10)()); // 61
