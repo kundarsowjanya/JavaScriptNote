@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+    <meta charset="UTF-8">
+    <title>Comment Section</title>
+    <link rel="stylesheet" href="comment_section/style.css">
+ </head>
+
+ <body>
+   
+  <div class="comment-section">
+        <h2>Comment Section</h2>
+
+        <div class="add-comment">
+            <input type="text" id="author" placeholder="Your name"/>
+            <textarea id="comment-text" placeholder="Write your comment here"></textarea>
+            <button id="add-comment-btn">Add Comment</button>
+
+        </div>
+
+         <!-- List of comments -->
+        <div id="comment-list"></div>
+
+        <div id="load-more" class="hidden">Show previous comment</div>
+
+   </div>
+
+    <script src="comment_section/app.js"></script>
+ </body>
+
+</html>
