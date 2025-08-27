@@ -13,6 +13,25 @@
 //     proccedToPayment()
 // })
 
+const posts=fetch('https://jsonplaceholder.typicode.com/posts')
+console.log(posts)
+
+
+// const cart=["shoes","pants","kurta"];
+
+// createOrder(cart,()=>{
+//    proccedToPayment(()=>{
+//         showOrderSummary()
+//     })
+// })
+
+
+// const promise= createOrder(cart)
+
+// promise.then(()=>{
+//     proccedToPayment()
+// })
+
 // const posts=fetch('https://jsonplaceholder.typicode.com/posts')
 // posts.then((res)=>res.json()).then((data)=>{
 //     console.log(data)
